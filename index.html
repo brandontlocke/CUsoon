@@ -50,13 +50,13 @@ function initialize() {
       var latLngB = new google.maps.LatLng(40.107693, -88.231577);
       var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, latLngB);
       var milecalc = distance / 1609.34;
-      var mileage = math.round(milecalc);
+      
 
 
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'You are ' + mileage + ' miles from CU'
+        content: 'You are ' + milecalc + ' miles from CU'
       });
 
       map.setCenter(pos);
