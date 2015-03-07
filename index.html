@@ -51,13 +51,14 @@ function initialize() {
       var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, latLngB);
       var divisor = 1609.34
       var milecalc = distance / divisor;
+      var mileage = math.round(milecalc)
       
 
 
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'You are ' + milecalc + ' miles from CU'
+        content: 'You are ' + mileage + ' miles from CU'
       });
 
       map.setCenter(pos);
