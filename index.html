@@ -11,7 +11,7 @@
         padding: 0px
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=geometry"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 
     <script>
 // Note: This example requires that you consent to location sharing when
@@ -33,15 +33,10 @@ function initialize() {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
-  
-
-
-
-
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'You are' + distance + 'from CU'
+        content: 'You are'
       });
 
       map.setCenter(pos);
@@ -72,6 +67,23 @@ function handleNoGeolocation(errorFlag) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+  var origin=pos
+
+  var destination=champaign+illinois
+
+  function calculateDistances() {
+  var service = new google.maps.DistanceMatrixService();
+  service.getDistanceMatrix(
+    {
+      origins: [origin],
+      destinations: [destination],
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, callback);
+}
 
 
 
