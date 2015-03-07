@@ -33,20 +33,7 @@ function initialize() {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
-    
-    function getLocation() {
-    navigator.geolocation.getCurrentPosition(
-            function(position) {
-                var latLngA = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-                var latLngB = new google.maps.LatLng(40.1150, 88.2728);
-                var distance = google.maps.geometry.spherical.computeDistanceBetween(latLngA, latLngB);
-                alert(distance);//In metres
-            }
-            function() {
-                alert("geolocation not supported!!");
-              }
-    );
-}
+  
 
 
 
